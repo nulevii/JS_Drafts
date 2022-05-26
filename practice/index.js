@@ -511,6 +511,8 @@
 
 // console.log(orderWeight('2000 11 11 12 10003 22 123 11 1234000 44444444 9999 12'));
 
+
+////V1--------------
 // const RomanNumerals = {
 //   thousandsNum: {
 //     1: 'M', 2: 'MM', 3: 'MMM', 4: 'MMMM', 0: '',
@@ -541,48 +543,72 @@
 
 //     return `${thousandsRoman}${hundreadsRoman}${dozensRoman}${digitsRoman}`;
 //   },
+  
+
+// };
+
+// console.log(RomanNumerals.toRoman('1223'));
+
+////V2------------
+
+const RomanNumerals = {
+
+  
+  // 3: ['', 'M', 'MM', 'MMM', 'MMMM'],
+  // 2: ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM', ]
+  // ,
+  // 1: ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC',]
+  // ,
+  // 0: ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX',],
+
+  // 3: {
+  //   1: 'M', 2: 'MM', 3: 'MMM', 4: 'MMMM', 0: '',
+  // },
+  // 2: {
+  //   1: 'C', 2: 'CC', 3: 'CCC', 4: 'CD', 5: 'D', 6: 'DC', 7: 'DCC', 8: 'DCCC', 9: 'CM', 0: '',
+  // },
+  // 1: {
+  //   1: 'X', 2: 'XX', 3: 'XXX', 4: 'XL', 5: 'L', 6: 'LX', 7: 'LXX', 8: 'LXXX', 9: 'XC', 0: '',
+  // },
+  // 0: {
+  //   1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX', 0: '',
+  // },
+
+//     toRoman(num) {
+//       if(/\D/.test(num)) {return 'Please insert only figures'};
+//     let nums = String(num)
+    
+//     nums = nums.split('')
+//     return nums.map((cur, d) => {
+//         return RomanNumerals[nums.length - 1 - d][cur];
+//     }).join('');
+//   },
+
+
+  
+
+
 //   fromRoman(romanNum) {
-//     function getObjKey(obj, value) {
-//       return Object.keys(obj).find((key) => obj[key] === value);
+    
+//     let i = 3;
+    
+//     for(i; i >= 0; i-=1) {
+//       console.log(RomanNumerals[i].length)
+//       console.log(Object.values(RomanNumerals[i][4]))
+
 //     }
-//     let thousandNum = getObjKey(RomanNumerals.thousandsNum, 'MM')
-//     console.log(thousandNum)
-//     return romanNum.replace(/(MMMM)||(MMM)/, 2);
+//     return romanNum
+
 //   },
 
 
 // };
 
-// // console.log(RomanNumerals.toRoman(1999));
+// console.log(RomanNumerals.toRoman('122'));
 // console.log(RomanNumerals.fromRoman('MMMMCCXXXIX'));
+// console.log(Object.values(RomanNumerals[1][6]))
 
-// const RomanNumerals = {
-//   3: {
-//     1: 'M', 2: 'MM', 3: 'MMM', 4: 'MMMM', 0: '',
-//   },
-//   2: {
-//     1: 'C', 2: 'CC', 3: 'CCC', 4: 'CD', 5: 'D', 6: 'DC', 7: 'DCC', 8: 'DCCC', 9: 'CM', 0: '',
-//   },
-//   1: {
-//     1: 'X', 2: 'XX', 3: 'XXX', 4: 'XL', 5: 'L', 6: 'LX', 7: 'LXX', 8: 'LXXX', 9: 'XC', 0: '',
-//   },
-//   0: {
-//     1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX', 0: '',
-//   }
-// }
 
-// const toRoman = (num) => {
-//   const nums = num.split('');
-//   return nums.map((cur, ) => {
-//     console.log(e)
-//     console.log(d)
-//     console.log(cur)
-//       return RomanNumerals[nums.length - 1 - d][cur];
-//   }, d, e).join('');
-// }
-// console.log(toRoman('1234'))
-
-// something.map((a) =>{}, b, c)
 
 // ?????????????????????????????????????????????????????????????????????
 /////conditional expressions
@@ -621,4 +647,27 @@
 // }
 
 // console.log(sumPositiveNumbers(-2, 2))
-Hello
+
+// const value1 = 11;
+// const value2 = 25
+
+// value1
+//   ? console.log('Условие Истинно')
+//   : console.log('Условие ложно')
+
+//   function myFunction(value1, value2) {
+//     return value1
+//   }
+// value1 && value2
+// ? console.log(myFunction(value1, value2))
+// : myFunction2()
+
+// let value = -11;
+// console.log(value>= 0 ? value : -value)
+
+////-------------------------------------------------------------------------------------
+////Cycles
+
+const myArray = [true, 'abc', 10]
+let i
+while(i<=myArray.length-1)
