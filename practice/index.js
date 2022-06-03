@@ -512,7 +512,7 @@
 // console.log(orderWeight('2000 11 11 12 10003 22 123 11 1234000 44444444 9999 12'));
 
 
-////V1--------------
+/// /V1--------------
 // const RomanNumerals = {
 //   thousandsNum: {
 //     1: 'M', 2: 'MM', 3: 'MMM', 4: 'MMMM', 0: '',
@@ -543,41 +543,41 @@
 
 //     return `${thousandsRoman}${hundreadsRoman}${dozensRoman}${digitsRoman}`;
 //   },
-  
+
 
 // };
 
 // console.log(RomanNumerals.toRoman('1223'));
 
-////V2------------
+/// /V2------------
 
-const RomanNumerals = {
+// const RomanNumerals = {
 
-  
-  // 3: ['', 'M', 'MM', 'MMM', 'MMMM'],
-  // 2: ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM', ]
-  // ,
-  // 1: ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC',]
-  // ,
-  // 0: ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX',],
 
-  // 3: {
-  //   1: 'M', 2: 'MM', 3: 'MMM', 4: 'MMMM', 0: '',
-  // },
-  // 2: {
-  //   1: 'C', 2: 'CC', 3: 'CCC', 4: 'CD', 5: 'D', 6: 'DC', 7: 'DCC', 8: 'DCCC', 9: 'CM', 0: '',
-  // },
-  // 1: {
-  //   1: 'X', 2: 'XX', 3: 'XXX', 4: 'XL', 5: 'L', 6: 'LX', 7: 'LXX', 8: 'LXXX', 9: 'XC', 0: '',
-  // },
-  // 0: {
-  //   1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX', 0: '',
-  // },
+// 3: ['', 'M', 'MM', 'MMM', 'MMMM'],
+// 2: ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM', ]
+// ,
+// 1: ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC',]
+// ,
+// 0: ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX',],
+
+// 3: {
+//   1: 'M', 2: 'MM', 3: 'MMM', 4: 'MMMM', 0: '',
+// },
+// 2: {
+//   1: 'C', 2: 'CC', 3: 'CCC', 4: 'CD', 5: 'D', 6: 'DC', 7: 'DCC', 8: 'DCCC', 9: 'CM', 0: '',
+// },
+// 1: {
+//   1: 'X', 2: 'XX', 3: 'XXX', 4: 'XL', 5: 'L', 6: 'LX', 7: 'LXX', 8: 'LXXX', 9: 'XC', 0: '',
+// },
+// 0: {
+//   1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX', 0: '',
+// },
 
 //     toRoman(num) {
 //       if(/\D/.test(num)) {return 'Please insert only figures'};
 //     let nums = String(num)
-    
+
 //     nums = nums.split('')
 //     return nums.map((cur, d) => {
 //         return RomanNumerals[nums.length - 1 - d][cur];
@@ -585,13 +585,13 @@ const RomanNumerals = {
 //   },
 
 
-  
+
 
 
 //   fromRoman(romanNum) {
-    
+
 //     let i = 3;
-    
+
 //     for(i; i >= 0; i-=1) {
 //       console.log(RomanNumerals[i].length)
 //       console.log(Object.values(RomanNumerals[i][4]))
@@ -611,7 +611,7 @@ const RomanNumerals = {
 
 
 // ?????????????????????????????????????????????????????????????????????
-/////conditional expressions
+/// //conditional expressions
 // const person = {
 //   age: 20,
 // };
@@ -665,9 +665,127 @@ const RomanNumerals = {
 // let value = -11;
 // console.log(value>= 0 ? value : -value)
 
-////-------------------------------------------------------------------------------------
-////Cycles
+/// /-------------------------------------------------------------------------------------
 
-const myArray = [true, 'abc', 10]
-let i
-while(i<=myArray.length-1)
+
+// const doneOrNot = (sudoku) => {
+//   const testNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//   for (const num in sudoku) {
+//     for (const newnum in sudoku[num]) {
+//       const regexp = RegExp(`${testNums[newnum]}`);
+
+//       if (regexp.test(sudoku[num])) {
+//         sudoku[num][newnum] = 0
+//       }
+
+
+//       console.log(num);
+//       console.log(newnum)
+//       console.log(testNums[newnum])
+
+
+
+//       console.log(sudoku[num][newnum]);
+//       console.log(sudoku);
+//     }
+//   }
+//   return sudoku;
+// };
+
+// console.log(doneOrNot(
+//   [[5, 3, 4, 6, 7, 8, 9, 1, 2],
+//     /*[6, 7, 2, 1, 9, 5, 3, 4, 8],
+//     [1, 9, 8, 3, 4, 2, 5, 6, 7],
+//     [8, 5, 9, 7, 6, 1, 4, 2, 3],
+//     [4, 2, 6, 8, 5, 3, 7, 9, 1],
+//     [7, 1, 3, 9, 2, 4, 8, 5, 6],
+//     [9, 6, 1, 5, 3, 7, 2, 8, 4],
+//     [2, 8, 7, 4, 1, 9, 6, 3, 5],
+// [3, 4, 5, 2, 8, 6, 1, 7, 9]*/],
+// ));
+
+// SUDOKU CHECK V1---------------------------------------------------------------------
+
+// const doneOrNot = (sudoku) => {
+//   const copiedSudoku = JSON.parse(JSON.stringify(sudoku));
+//   console.log(copiedSudoku);
+
+//   for (const num in copiedSudoku) {
+//     const testNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     const testNums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     for (const newnum in copiedSudoku[num]) {
+//       console.log(copiedSudoku[num].includes(testNums[newnum]))
+//       if (!copiedSudoku[num].includes(testNums[newnum])) return false
+//       console.log((copiedSudoku[newnum][num]))
+//       let index = testNums2.indexOf(copiedSudoku[newnum][num]);
+//       if (index !== -1){testNums2.splice(index, 1)}
+
+
+//       console.log(testNums2)
+//       console.log(index)
+
+//       console.log(testNums2)
+//     }
+
+//     if (testNums2.length !== 0) return false
+//     console.log(testNums2.length)
+//   }
+//   return true
+// };
+
+// console.log(doneOrNot(
+//   [[5, 3, 4, 6, 7, 8, 9, 1, 2],
+//     [6, 7, 2, 1, 9, 5, 3, 4, 8],
+//     [1, 9, 8, 3, 4, 2, 5, 6, 7],
+//     [8, 5, 9, 7, 6, 1, 4, 2, 3],
+//     [4, 2, 6, 8, 5, 3, 7, 9, 1],
+//     [7, 1, 3, 9, 2, 4, 8, 5, 6],
+//     [9, 6, 1, 5, 3, 7, 2, 8, 4],
+//     [2, 8, 7, 4, 1, 9, 6, 3, 5],
+//     [3, 4, 5, 2, 8, 6, 1, 7, 9]],
+// ));
+
+// SUDOKU CHECK V2---------------------------------------------------------------------
+const doneOrNot = (sudoku) => {
+  const copiedSudoku = JSON.parse(JSON.stringify(sudoku));
+  if (sudoku.length >= 10) { return 'Try again!'; }
+  console.log(sudoku.length)
+  copiedSudoku.forEach((num) => { console.log(num); });
+  for (const num in copiedSudoku) {
+    if (sudoku[num].length>=10){return 'Try again!'}
+    const testNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const testNums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (const newnum in copiedSudoku[num]) {
+      if (!copiedSudoku[num].includes(testNums[newnum])) return 'Try again!';
+      const index = testNums2.indexOf(copiedSudoku[newnum][num]);
+      if (index !== -1) { testNums2.splice(index, 1); }
+    }
+
+    if (testNums2.length !== 0) return 'Try again!';
+  }
+  return 'Finished';
+};
+
+console.log(doneOrNot([[5, 3, 4, 6, 7, 8, 9, 1, 2],
+  [6, 7, 2, 1, 9, 5, 3, 4, 8],
+  [1, 9, 8, 3, 4, 2, 5, 6, 7],
+  [8, 5, 9, 7, 6, 1, 4, 2, 3],
+  [4, 2, 6, 8, 5, 3, 7, 9, 1],
+  [7, 1, 3, 9, 2, 4, 8, 5, 6],
+  [9, 6, 1, 5, 3, 7, 2, 8, 4],
+  [2, 8, 7, 4, 1, 9, 6, 3, 5],
+  [3, 4, 5, 2, 8, 6, 1, 7, 9],]));
+
+
+
+// ---------------------------------------------------------------------------------------------
+//  // STA
+// const names = ['josh', 'tony', 'daniel'];
+// const arrayplaces = ['30', '60', '90'];
+
+// names.forEach((elem, indexed) => {
+//   names.forEach((elem2) => {
+//     const num2 = arrayplaces[indexed];
+//     console.log(`The user ${elem2} iterated in place ${num2}`);
+//   });
+// });
