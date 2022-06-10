@@ -452,40 +452,6 @@
 
 /// //ANAGRAM FINDER
 
-// const word = 'abba';
-// const words = ['aabb', 'abcd', 'bbaa', 'dada', 'abba'];
-
-// function anagrams(word, words) {
-//   const wordArr = word.split('');
-//   wordRegExp = new RegExp(`(?=${wordArr.join(')(?=.*')})`);
-//   console.log(wordRegExp);
-//   const newWordsArr = words.filter((wordsNo) => wordsNo.match(wordRegExp));
-//   return newWordsArr;
-// }
-
-// console.log(anagrams(word, words));
-
-// const data = ['abc', 'yte', 'juu'];
-
-// const result = `(${data.join(')(')})`;
-// console.log(result);
-
-// Nead to finish this!?!?!?!?!??!?!?!??!?!?!?!??!?!??!??!?!!?!?!??!?!?!?!??!?!?
-
-// // Destructurisation
-// const someArr = ['one', 'two', 'three', undefined, 'four'];
-// const [el1, el2, el3] = someArr;
-// console.log(el1, el2, el3);
-// const [,,, emptyEl = '10'] = someArr;
-// console.log(emptyEl);
-
-
-// let a = 'b';
-// let b = 'a';
-
-// [b, a] = [a, b];
-// console.log(a, b);
-
 // --------------------------------------------------------------------------
 // // SECONDS TO TIME
 // function humanReadable(seconds = 0) {
@@ -746,36 +712,94 @@
 // ));
 
 // SUDOKU CHECK V2---------------------------------------------------------------------
-const doneOrNot = (sudoku) => {
-  const copiedSudoku = JSON.parse(JSON.stringify(sudoku));
-  if (sudoku.length >= 10) { return 'Try again!'; }
-  console.log(sudoku.length)
-  copiedSudoku.forEach((num) => { console.log(num); });
-  for (const num in copiedSudoku) {
-    if (sudoku[num].length>=10){return 'Try again!'}
-    const testNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const testNums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (const newnum in copiedSudoku[num]) {
-      if (!copiedSudoku[num].includes(testNums[newnum])) return 'Try again!';
-      const index = testNums2.indexOf(copiedSudoku[newnum][num]);
-      if (index !== -1) { testNums2.splice(index, 1); }
-    }
+// const doneOrNot = (sudoku) => {
+//   const copiedSudoku = JSON.parse(JSON.stringify(sudoku));
+//   if (sudoku.length >= 10) { return 'Try again!'; }
+//   console.log(sudoku.length)
+//   copiedSudoku.forEach((num) => { console.log(num); });
+//   for (const num in copiedSudoku) {
+//     if (sudoku[num].length>=10){return 'Try again!'}
+//     const testNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     const testNums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     for (const newnum in copiedSudoku[num]) {
+//       if (!copiedSudoku[num].includes(testNums[newnum])) return 'Try again!';
+//       const index = testNums2.indexOf(copiedSudoku[newnum][num]);
+//       if (index !== -1) { testNums2.splice(index, 1); }
+//     }
 
-    if (testNums2.length !== 0) return 'Try again!';
-  }
-  return 'Finished';
-};
+//     if (testNums2.length !== 0) return 'Try again!';
+//   }
+//   return 'Finished';
+// };
 
-console.log(doneOrNot([[5, 3, 4, 6, 7, 8, 9, 1, 2],
-  [6, 7, 2, 1, 9, 5, 3, 4, 8],
-  [1, 9, 8, 3, 4, 2, 5, 6, 7],
-  [8, 5, 9, 7, 6, 1, 4, 2, 3],
-  [4, 2, 6, 8, 5, 3, 7, 9, 1],
-  [7, 1, 3, 9, 2, 4, 8, 5, 6],
-  [9, 6, 1, 5, 3, 7, 2, 8, 4],
-  [2, 8, 7, 4, 1, 9, 6, 3, 5],
-  [3, 4, 5, 2, 8, 6, 1, 7, 9],]));
+// console.log(doneOrNot([[5, 3, 4, 6, 7, 8, 9, 1, 2],
+//   [6, 7, 2, 1, 9, 5, 3, 4, 8],
+//   [1, 9, 8, 3, 4, 2, 5, 6, 7],
+//   [8, 5, 9, 7, 6, 1, 4, 2, 3],
+//   [4, 2, 6, 8, 5, 3, 7, 9, 1],
+//   [7, 1, 3, 9, 2, 4, 8, 5, 6],
+//   [9, 6, 1, 5, 3, 7, 2, 8, 4],
+//   [2, 8, 7, 4, 1, 9, 6, 3, 5],
+//   [3, 4, 5, 2, 8, 6, 1, 7, 9],]));
 
+// SUDOKU CHECK V3---------------------------------------------------------------------
+
+// const doneOrNot2 = (sudoku) => {
+//   const copiedSudoku = JSON.parse(JSON.stringify(sudoku));
+//   // Max Height Test
+//   if (sudoku.length !== 9) { return 'Try again!'; }
+//   for (const num in copiedSudoku) {
+//     // Max Length Test
+//     if (sudoku[num].length !== 9) { return 'Try again!'; }
+
+//     const testNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     const testNums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     for (const newnum in copiedSudoku[num]) {
+//       if (!copiedSudoku[num].includes(testNums[newnum])) return 'Try again!';
+//       const index = testNums2.indexOf(copiedSudoku[newnum][num]);
+//       if (index !== -1) { testNums2.splice(index, 1); }
+//     }
+
+//     if (testNums2.length !== 0) return 'Try again!';
+//   }
+
+
+//   for (let sudokuSquareX = 0; sudokuSquareX <= 8; sudokuSquareX += 3) {
+//     console.log(sudokuSquareX);
+//     for (let sudokuSquareY = 0; sudokuSquareY <= 8; sudokuSquareY += 3) {
+//       console.log(sudokuSquareY);
+//       const testNums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//       for (let x = 0 + sudokuSquareX; x <= 2 + sudokuSquareX; x += 1) {
+//         console.log(x);
+
+//         for (let y = 0 + sudokuSquareY; y <= 2 + sudokuSquareY; y += 1) {
+//           console.log(x);
+//           console.log(y);
+//           console.log(sudoku[x][y]);
+//           const index = testNums2.indexOf(copiedSudoku[x][y]);
+//           console.log(index);
+//           if (index !== -1) { testNums2.splice(index, 1); }
+//           console.log(testNums2);
+//         }
+//       }
+//       console.log(testNums2);
+//       if (testNums2.length !== 0) return 'Try again!';
+//     }
+//   }
+
+//   return 'Finished!';
+// };
+
+// console.log(doneOrNot2([
+//   [5, 3, 4, 6, 7, 8, 9, 1, 2],
+//   [6, 7, 2, 1, 9, 5, 3, 4, 8],
+//   [1, 9, 8, 3, 4, 2, 5, 6, 7],
+//   [8, 5, 9, 7, 6, 1, 4, 2, 3],
+//   [4, 2, 6, 8, 5, 3, 7, 9, 1],
+//   [7, 1, 3, 9, 2, 4, 8, 5, 6],
+//   [9, 6, 1, 5, 3, 7, 2, 8, 4],
+//   [2, 8, 7, 4, 1, 9, 6, 3, 5],
+//   [3, 4, 5, 2, 8, 6, 1, 7, 9]]));
 
 
 // ---------------------------------------------------------------------------------------------
@@ -789,3 +813,178 @@ console.log(doneOrNot([[5, 3, 4, 6, 7, 8, 9, 1, 2],
 //     console.log(`The user ${elem2} iterated in place ${num2}`);
 //   });
 // });
+
+
+
+// //----------------------------------------------------------------------------------------
+// function arrayDiff(a, b) {
+//   const aCopy = [...a];
+//   function arraySplice(b) {
+//     b.forEach(function repeat(element) {
+//       console.log(aCopy.indexOf(element));
+
+//       if (aCopy.indexOf(element) !== -1) {
+//         aCopy.splice(aCopy.indexOf(element), 1);
+//         repeat(element);
+//       } else return element;
+//       console.log(aCopy.indexOf(element));
+//     });
+//   }
+//   arraySplice(b);
+//   return aCopy;
+// }
+
+// console.log(arrayDiff([2, 1, 3, 1, 4, 2, 2, 2], [2, 2, 3,4]));
+
+
+/// //----------------------------------------------------------------------------
+
+// function likes(names) {
+//   let result = 'like this';
+//   switch (names.length) {
+//     case 0:
+//       result = 'no one likes this';
+//       break;
+//     case 1:
+//       result = `${names[0]} likes this;
+//       break;
+//     case 2:
+//       result = `${names[0]} and ${names[1]} ${result}`;
+//       break;
+//     case 3:
+//       result = `${names[0]} ${names[1]} and ${names[2]} ${result}`;
+//       break;
+//     default:
+//       result = `${names[0]} ${names[1]} and ${names.length - 2} others ${result}`;
+//   }
+//   return result;
+// }
+
+// console.log(likes(['hello', 'hello', 'hello', 'hello']));
+
+//----------------------------------------------------------------------------
+
+// const moveZeros = (arr) => {
+//   arr.forEach((element) => {
+//     console.log(element);
+//     if (arr.indexOf(0) !== -1) {
+//       arr.push(0);
+//       arr.splice(arr.indexOf(0), 1);
+//     }
+//   });
+//   return arr;
+// };
+// console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
+
+//----------------------------------------------------------------------------
+
+// class Comment {
+//   constructor(text) {
+//     this.text = text;
+//     this.votesQty = 0;
+//   }
+
+//   static mergeComents(first, second) {
+//     return `${first} ${second}`;
+//   }
+
+
+//   upvotes() {
+//     this.votesQty += 1;
+//   }
+// }
+
+// const firstComment = new Comment('first comment');
+// console.log(Comment.mergeComents(1, 2));
+// console.log(firstComment);
+// console.log(Comment.prototype);
+// console.log(firstComment.prototype)
+
+// const myName = 'Bogdan'
+
+// myName.toUpperCase
+// console.log(myName.toUpperCase())
+
+// class NewClass {
+//   constructor(objectName, ObjectInfo, myName) {
+//     this.objectName = objectName;
+//     this.ObjectInfo = ObjectInfo;
+//     this.myName = myName;
+//     this.defaultValue = 11;
+//   }
+
+//   value = 11;
+
+//   reduceDefault() {
+//     this.defaultValue -= 1;
+//   }
+
+//   reduceValue() {
+//     this.value = 5;
+//   }
+// }
+
+
+// const tried = new NewClass('Class', 'Class that I created', 'Yevgenii');
+// console.log(tried);
+// console.log(tried.value);
+// tried.reduceValue();
+// console.log(tried.value);
+// tried.reduceDefault();
+// console.log(tried);
+// console.log(tried);
+
+// console.log(tried.value.constructor);
+
+
+// const some = [1, 2, 3, 4];
+
+// newSome = some.reduce((el, acc) => el + acc, 5);
+// console.log(newSome);
+
+// const string = new String('hello');
+// console.log(string);
+
+// const newString = string;
+// newString[3] = 'a';
+// console.log(string)
+// console.log(newString)
+// console.log(newString[3])
+
+
+//----------------------------------------------------------------------------
+
+// let a = 7;
+
+// console.log(a);
+
+
+
+// const b = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(a = 99);
+//     console.log(a);
+//   }, 2000);
+// });
+
+
+// b.then(() => {
+//   console.log(a);
+// });
+
+// console.log(a);
+
+//----------------------------------------------------------------------------
+
+
+// import getData from './hello.js';
+
+// getData('https://jsonplaceholder.typicode.com/todos')
+//   .then((data) => console.log(data))
+//   .catch((error) => console.log(error));
+
+// getData('https://jsonplaceholder.typicode.com/todos/3')
+//   .then((data) => console.log(data))
+//   .catch((error) => console.log(error));
+
+//----------------------------------------------------------------------------
