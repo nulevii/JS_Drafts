@@ -974,10 +974,10 @@
 
 // console.log(a);
 
-//----------------------------------------------------------------------------
+// Promises ---------------------------------------------------------------
 
 
-// import getData from './hello.js';
+// import getData from './modules.js';
 
 // getData('https://jsonplaceholder.typicode.com/todos')
 //   .then((data) => console.log(data))
@@ -987,4 +987,92 @@
 //   .then((data) => console.log(data))
 //   .catch((error) => console.log(error));
 
-//----------------------------------------------------------------------------
+// - async/await --------------------------------------------------------------
+
+// async function asyncFn() {
+//   // return Promise
+// }
+
+// const asyncFn2 = async () => {
+//   throw new Error('There was an error!');
+//   return 10;
+// };
+
+// console.log(asyncFn2());
+
+// asyncFn2()
+//   .then((value) => console.log(value))
+//   .catch((error) => console.log('hello'));
+
+// const timerPromise = () => new Promise((resolve, reject) => setTimeout(() => resolve(), 2000));
+
+// const asyncFn = async () => {
+//   console.log('Timer starts');
+//   const startTime = performance.now();
+//   await timerPromise();
+//   const endTime = performance.now();
+//   console.log('Timer ended;', `${Math.floor((endTime - startTime) / 1000)} Seconds passed`);
+//   console.log(endTime);
+// };
+// asyncFn();
+
+
+// const getData = async (url) => {
+//   const res = await fetch(url);
+//   const json = await res.json();
+//   return json;
+// };
+
+
+// try {
+//   const data = await getData('https://jsonplaceholder.typicode.com/todos/1');
+//   console.log(data);
+// } catch (error) {
+//   console.log(error.message);
+// }
+
+
+
+// try {
+//   const data = await getData('https://jsonplaceholder.typicode.com/todos/4');
+//   console.log(data);
+// } catch (error) {
+//   console.log(error.message);
+// }
+
+
+// try {
+//   const data = await getData('https://jsonplaceholder.typicode.com/todos/2');
+//   console.log(data);
+// } catch (error) {
+//   console.log(error.message);
+// }
+
+
+// const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// const getTodoById = async (id) => {
+//   await timeout(2000);
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
+//   const data = await res.json();
+//   return data;
+// };
+
+// try {
+//   const todo1 = await getTodoById(1);
+//   const todo2 = await getTodoById(2);
+//   console.log(todo1, todo2);
+// } catch (e) {
+//   console.log(e.message);
+// }
+
+//  Practice with passed themes---------------------------------------------------
+
+// var hello = 4
+
+// const fn = () => {
+//   var hello = 10;
+//   console.log(hello)
+// };
+// fn();
+// console.log(hello);
