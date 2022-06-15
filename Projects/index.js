@@ -1076,3 +1076,203 @@
 // };
 // fn();
 // console.log(hello);
+
+
+// let a = '1';
+// let b = '2';
+
+// [b, a] = [a, b];
+
+// console.log(a);
+// console.log(b);
+
+
+// const arr = [1, 2, 3, 4, { hi: 10 }];
+
+// const [,,,,{hi}] = arr;
+
+// console.log(hi);
+
+// console.log(arr);
+
+// const hello = {
+//   this: { obo: '10' },
+
+// };
+
+// console.log(hello);
+
+
+// const arr = [1, 2, 3, 4, 5, 6];
+// 1
+// arr.forEach
+// arr.every;
+// console.log(arr.slice(1, 3))
+
+// const obj = {
+//   el: 1,
+//   el2: 2,
+//   el3: 3,
+//   name: 'Yevgenii',
+// };
+
+// function sayHi() {
+//   console.log(this.name);
+// }
+
+
+// obj.f = sayHi;
+// obj.f();
+// obj.f();
+// obj.f();
+// obj.f();
+
+
+
+// let user = { name: "Джон" };
+// let admin = { name: "Админ" };
+
+// function sayHi() {
+//   console.log( this.name );
+// }
+
+// // используем одну и ту же функцию в двух объектах
+// user.f = sayHi;
+// admin.f = sayHi;
+
+// // вызовы функции, приведённые ниже, имеют разное значение this
+// // "this" внутри функции является ссылкой на объект, который указан "перед точкой"
+// user.f(); // Джон  (this == user)
+// admin.f(); // Админ  (this == admin)
+
+// admin['f'](); // Ад
+
+
+
+// const user = {
+//   firstName: 'Илья',
+//   sayhi: function() {
+//     console.log(this);
+
+//         console.log(this.firstName);
+//         console.log(this);
+//       }
+
+//   }
+
+// user.sayhi();
+
+// const user2 = {
+//   firstName: 'Илья',
+//   sayHi2() {
+//     const arrow = function () { console.log(this.firstName); };
+//     arrow();
+//   }
+// };
+
+// user2.sayHi2();
+
+
+// function rot13(str) {
+//   const newStr = str.replace(/[a-z]/gi, (a) => {
+//     if (/[a-m]/gi.test(a)) {
+//       a = a.charCodeAt(0) + 13;
+//     } else { a = a.charCodeAt(0) - 13; }
+//     console.log(a);
+//     return String.fromCharCode(a);
+//   });
+//   return newStr;
+// }
+
+// console.log(rot13('EBG13 rknzcyr.'));
+
+
+// function generateHashtag(str) {
+//   console.log(str.length);
+
+//   // if str
+//   const newStr = `#${str.replace(/\b[a-z]/g, (a) => a.toUpperCase()).replace(/\s/g, '')}`;
+//   if (newStr.length <= 1 || newStr.length >= 140) { return false; }
+//   console.log(newStr.length)
+//   return newStr;
+// }
+
+// console.log(generateHashtag("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+
+
+
+// function formatDuration(seconds) {
+//   if (seconds === 0) { return 'now'; }
+//   const year = Math.floor(seconds / 365 / 86400);
+//   const daysSeconds = (seconds - year * 365 * 86400);
+//   const day = Math.floor(daysSeconds / 86400);
+//   const hoursSeconds = (daysSeconds - day * 86400);
+//   const hour = Math.floor(hoursSeconds / 3600);
+//   const minutesSeconds = (hoursSeconds - hour * 3600);
+//   const minute = Math.floor(minutesSeconds / 60);
+//   const second = minutesSeconds - minute * 60;
+
+//   const yearDimension = 'year';
+//   const dayDimension = 'day';
+//   const hourDimension = 'hour';
+//   const minuteDimension = 'minute';
+//   const secondDimension = 'second';
+//   const concatTime = (timeElement, dimension) => {
+//     switch (timeElement) {
+//       case 0: timeElement = '';
+//         break;
+//       case 1: return `${timeElement} ${dimension}, `;
+//       default:
+//         return `${timeElement} ${dimension}s, `;
+//     }
+//     return timeElement;
+//   };
+//   const years = concatTime(year, yearDimension);
+//   const days = concatTime(day, dayDimension);
+//   const hours = concatTime(hour, hourDimension);
+//   const minutes = concatTime(minute, minuteDimension);
+//   const resSeconds = concatTime(second, secondDimension);
+
+//   return `${years}${days}${hours}${minutes}${resSeconds}`.replace(/,\s$/, '').replace(/,\s(?=\d+[\D]*$)/, ' and ').replace(/,$/);
+// }
+
+// console.log(formatDuration((0)));
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------
+
+function ipsBetween(start, end) {
+  const startIP = {};
+  const endIP = {};
+
+  let acc = 0;
+
+
+  const ipSeparator = (ipObject, ip) => {
+    ip.replace(/\d+/g, (digit) => {
+      if (acc >= 4) { acc -= 4; }
+      acc += 1;
+      ipObject[acc] = digit;
+    });
+    return ipObject;
+  };
+
+  ipSeparator(startIP, start);
+  ipSeparator(endIP, end);
+
+  const calculateDiff = (startIP, endIP) => {
+    const ip1 = (endIP[1] - startIP[1]) * 256 * 256 * 256;
+    const ip2 = (endIP[2] - startIP[2]) * 256 * 256;
+    const ip3 = (endIP[3] - startIP[3]) * 256;
+    const ip4 = (endIP[4] - startIP[4]);
+    console.log(ip1, ip2, ip3, ip4);
+    return ip1 + ip2 + ip3 + ip4;
+  };
+  console.log(calculateDiff(startIP, endIP));
+
+  return calculateDiff(startIP, endIP);
+}
+
+console.log(ipsBetween("170.0.0.0", "170.1.0.0"));
