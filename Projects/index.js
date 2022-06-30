@@ -1,6 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
 /* eslint-disable no-multiple-empty-lines */
 /* eslint-disable no-plusplus */
-/* eslint-disable linebreak-style */
+
 // const personOne = {
 //     name: 'Bob',
 //     age: 21
@@ -1193,11 +1195,11 @@
 //   // if str
 //   const newStr = `#${str.replace(/\b[a-z]/g, (a) => a.toUpperCase()).replace(/\s/g, '')}`;
 //   if (newStr.length <= 1 || newStr.length >= 140) { return false; }
-//   console.log(newStr.length)
+//   console.log(newStr.length);
 //   return newStr;
 // }
 
-// console.log(generateHashtag("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+// console.log(generateHashtag('Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'));
 
 
 
@@ -1241,38 +1243,92 @@
 
 
 
-//---------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
-function ipsBetween(start, end) {
-  const startIP = {};
-  const endIP = {};
+// function ipsBetween(start, end) {
+//   const startIP = {};
+//   const endIP = {};
 
-  let acc = 0;
+//   let acc = 0;
+
+//   const ipSeparator = (ipObject, ip) => {
+//     ip.replace(/\d+/g, (digit) => {
+//       if (acc >= 4) { acc -= 4; }
+//       acc += 1;
+//       ipObject[acc] = digit;
+//     });
+//     return ipObject;
+//   };
+
+//   ipSeparator(startIP, start);
+//   ipSeparator(endIP, end);
+
+//   const calculateDiff = (startIP, endIP) => {
+//     const ip1 = (endIP[1] - startIP[1]) * 256 * 256 * 256;
+//     const ip2 = (endIP[2] - startIP[2]) * 256 * 256;
+//     const ip3 = (endIP[3] - startIP[3]) * 256;
+//     const ip4 = (endIP[4] - startIP[4]);
+//     console.log(ip1, ip2, ip3, ip4);
+//     return ip1 + ip2 + ip3 + ip4;
+//   };
+//   return calculateDiff(startIP, endIP);
+// }
+
+// console.log(ipsBetween('170.0.0.0', '170.1.0.0'));
+
+// console.log(window.innerHeight);
+// window.innerHeight = 100;
+// console.log(window.innerHeight)
 
 
-  const ipSeparator = (ipObject, ip) => {
-    ip.replace(/\d+/g, (digit) => {
-      if (acc >= 4) { acc -= 4; }
-      acc += 1;
-      ipObject[acc] = digit;
-    });
-    return ipObject;
-  };
+// // Govnocod-------------------------------------------------------------------------------------------------------------------
+// function removeZeros(array) {
+//   const checkIfNull = () => {
+//     let acc = 0;
+//     let holder;
+//     let nulls = 0;
+    
+//     for (let arrEl = 0; arrEl <= array.length - 1; arrEl += 1) {
+//       if (array[arrEl] === 0 || array[arrEl] === '0') {
+//         nulls += 1;}}
+//     let check = 1
+//     let arrLength = array.length - 1 - nulls;
+//     for (arrLength; arrLength >= 0; arrLength -= 1) {
 
-  ipSeparator(startIP, start);
-  ipSeparator(endIP, end);
+//       for (let el = 0; arrLength >= el; el += 1) {
+//         if (array[el] === 0 || array[el] === '0') {
+//           check = 0;
+//         }
+//       }
 
-  const calculateDiff = (startIP, endIP) => {
-    const ip1 = (endIP[1] - startIP[1]) * 256 * 256 * 256;
-    const ip2 = (endIP[2] - startIP[2]) * 256 * 256;
-    const ip3 = (endIP[3] - startIP[3]) * 256;
-    const ip4 = (endIP[4] - startIP[4]);
-    console.log(ip1, ip2, ip3, ip4);
-    return ip1 + ip2 + ip3 + ip4;
-  };
-  console.log(calculateDiff(startIP, endIP));
+//     }
+//     console.log(check)
+//     if (check === 1){return}
 
-  return calculateDiff(startIP, endIP);
-}
+//     for (let arrEl = 0; arrEl <= array.length - 1; arrEl += 1) {
+//       if (array[arrEl] === 0 || array[arrEl] === '0') {
+//         nulls += 1;
+//         acc = 1;
 
-console.log(ipsBetween("170.0.0.0", "170.1.0.0"));
+//         if (holder === undefined) { holder = array[arrEl]; }
+//       }
+
+//       array[arrEl] = array[arrEl + acc];
+//     }
+
+//     array[array.length - 1] = holder;
+
+//   };
+
+
+//   for (let arrEl = 0; arrEl <= array.length; arrEl += 1) {
+//     checkIfNull();
+//     console.log(array);
+//   }
+
+//   return array;
+// }
+
+// console.log(removeZeros([0, '0',0, 2, 2, 2, 2]));
+
+// //---------------------------------------------------------------------------------------------------------
